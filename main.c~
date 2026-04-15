@@ -1,0 +1,22 @@
+/*
+ * DUNGEON - A game about crawling around
+ * a dungeon I guess, I dunno.
+ * just maek gaem pls
+ */
+
+#include "stdio.h"
+
+int main(int argc, char* argv[])
+{printf("Num args: %d\n", argc);
+  
+    for (int i = 0; i < argc; i++)
+    {
+	printf("%s ", argv[i]);
+    }
+    
+    for (int i = 1; i < 2; i++)
+    {
+
+    }
+    return 0;
+}

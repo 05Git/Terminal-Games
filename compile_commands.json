@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-o",
+      "main",
+      "main.c"
+    ],
+    "directory": "/home/oscar/c-projects/dungeon",
+    "file": "/home/oscar/c-projects/dungeon/main.c",
+    "output": "/home/oscar/c-projects/dungeon/main"
+  }
+]
