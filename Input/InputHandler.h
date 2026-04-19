@@ -1,22 +1,26 @@
 #ifndef INPUTHANDLER_H
 #define INPUTHANDLER_H
 
-typedef enum { UP, DOWN, LEFT, RIGHT, ESC } Inputs;
+#include "Input.h"
+#include <linux/input.h>
 
-typedef void (*ActionFn)();
-
-typedef struct {
-    Inputs key;
-    unsigned int isPressed;
-    void (*ActionFn)();
-} Input;
+#define MAX_INPUT_BUFFER_SIZE 256
 
 typedef struct {
     void *owner;
-    Input *inputs;
+    Input **inputBuffer;
+    int inputBufferSize;
+    int b_head;
+    int b_tail;
+    Input *lastInput;
 } InputHandler;
 
-InputHandler *makeInputHandler(void *owner, Input *(inpfunc)());
-void destInputHandler(InputHandler *handler);
+InputHandler *makeInputHandler(void *owner, int bufferSize);
+
+void destInputHandler(InputHandler *ih);
+
+void updateIH(InputHandler *ih);
+
+void addToIHBuffer(InputHandler *ih, Input *input);
 
 #endif

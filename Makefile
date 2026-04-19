@@ -1,5 +1,7 @@
 build:
-	gcc main.c -o main
+	$(MAKE) format
+	@mkdir -p build
+	gcc main.c -o build/main
 
 format:
 	@find . \( -name "*.c" -o -name "*.h" \) -not -name ".*" -print0 \

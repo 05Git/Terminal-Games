@@ -46,7 +46,7 @@ Snake *makeSnake() {
     setStates(snake);
     snake->object = makeGameObject(snake, 'S', (Vector2){0, 0},
                                    makeStateMachine(snake, NULL));
-    snake->inputHandler = makeInputHandler(snake, snakeInputs);
+    snake->inputHandler = makeInputHandler(snake, snakeInputs());
 
     return snake;
 }
