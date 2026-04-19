@@ -11,6 +11,8 @@ StateMachine *makeStateMachine(void *owner, State *initState) {
 void destStateMachine(StateMachine *sm) {
     if (sm->currentState)
         free(sm->currentState);
+
+    free(sm);
 }
 
 void SMTransition(StateMachine *sm, State *nextState) {
